@@ -20,75 +20,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------------------------------------------- /*
- * Transition elements
-/* ---------------------------------------------- */
-
-.form-control {
-	-webkit-transition: all 0.125s ease-in-out 0s;
-	   -moz-transition: all 0.125s ease-in-out 0s;
-		-ms-transition: all 0.125s ease-in-out 0s;
-		 -o-transition: all 0.125s ease-in-out 0s;
-			transition: all 0.125s ease-in-out 0s;
-}
-
-/* ---------------------------------------------- /*
- * Reset box-shadow
-/* ---------------------------------------------- */
-
-.form-control,
-.form-control:hover,
-.form-control:focus {
-	-webkit-box-shadow: none;
-			box-shadow: none;
-}
-
-/* ---------------------------------------------- /*
- * Reset border-radius
-/* ---------------------------------------------- */
-
-.form-control {
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-		 -o-border-radius: 3px;
-			border-radius: 3px;
-}
-
-/* ---------------------------------------------- /*
  * Inputs styles
 /* ---------------------------------------------- */
-
-.form-control {
-	background: #FFF;
-	border: 2px solid #C4C4C4;
-	font-size: 14px;
-	padding: 15px;
-	color: #777;
-}
-
-.input-section-margin {
-	margin-bottom: 10px;
-}
-
-.input-section-text {
-	padding-top: 4px;
-}
-
-.input-group-price {
-	width: 130px;
-}
-
-.input-price {
-	font-size: 14px !important;
-	font-weight: bold;
-	font-style: italic !important;
-	opacity: 0.9 !important;
-	color: #2d2d2d;
-	border-width: 1px;
-	background: #f8f8f8;
-}
-.input-price:hover {
-	cursor: default;
-}
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -197,24 +130,6 @@ body {
 
 .container {
 	padding-bottom: 90px;
-}
-
-.machine-title {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-.machine-section {
-	margin-bottom: 20px;
-}
-
-.section-price {
-	margin-top: 20px;
-}
-
-.machine-information {
-	margin-top: 40px;
-	font-style: italic;
 }
 
 .footer {
