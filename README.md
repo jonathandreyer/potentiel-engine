@@ -1,2 +1,2 @@
 # Potentiel engine
-A little web to create survey.
+A little web app to create survey.
