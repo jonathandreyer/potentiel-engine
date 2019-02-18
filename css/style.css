@@ -1,0 +1,234 @@
+/* ---------------------------------------------- /*
+ * General styles
+/* ---------------------------------------------- */
+
+a {
+	color: #ececec;
+}
+
+a:hover {
+	color: #C4C4C4;
+}
+
+/* ---------------------------------------------- /*
+ * Typography
+/* ---------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 5px 0 5px;
+	color: #222;
+}
+
+/* ---------------------------------------------- /*
+ * Transition elements
+/* ---------------------------------------------- */
+
+.form-control {
+	-webkit-transition: all 0.125s ease-in-out 0s;
+	   -moz-transition: all 0.125s ease-in-out 0s;
+		-ms-transition: all 0.125s ease-in-out 0s;
+		 -o-transition: all 0.125s ease-in-out 0s;
+			transition: all 0.125s ease-in-out 0s;
+}
+
+/* ---------------------------------------------- /*
+ * Reset box-shadow
+/* ---------------------------------------------- */
+
+.form-control,
+.form-control:hover,
+.form-control:focus {
+	-webkit-box-shadow: none;
+			box-shadow: none;
+}
+
+/* ---------------------------------------------- /*
+ * Reset border-radius
+/* ---------------------------------------------- */
+
+.form-control {
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+		 -o-border-radius: 3px;
+			border-radius: 3px;
+}
+
+/* ---------------------------------------------- /*
+ * Inputs styles
+/* ---------------------------------------------- */
+
+.form-control {
+	background: #FFF;
+	border: 2px solid #C4C4C4;
+	font-size: 14px;
+	padding: 15px;
+	color: #777;
+}
+
+.input-section-margin {
+	margin-bottom: 10px;
+}
+
+.input-section-text {
+	padding-top: 4px;
+}
+
+.input-group-price {
+	width: 130px;
+}
+
+.input-price {
+	font-size: 14px !important;
+	font-weight: bold;
+	font-style: italic !important;
+	opacity: 0.9 !important;
+	color: #2d2d2d;
+	border-width: 1px;
+	background: #f8f8f8;
+}
+.input-price:hover {
+	cursor: default;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.checkbox label:after,
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+
+/* ---------------------------------------------- /*
+ * General
+/* ---------------------------------------------- */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.wrap {
+	min-height: 100%;
+	position: relative;
+}
+
+.page-header {
+	border: 0;
+	margin: 0 0 20px;
+}
+
+.header {
+	margin: 0 30px;
+}
+
+.header-logo {
+	text-align: center;
+}
+
+.header-title {
+	margin: 15px;
+	text-align: center;
+}
+
+.header-logo img {
+	height: 60%;
+}
+
+.container {
+	padding-bottom: 90px;
+}
+
+.machine-title {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.machine-section {
+	margin-bottom: 20px;
+}
+
+.section-price {
+	margin-top: 20px;
+}
+
+.machine-information {
+	margin-top: 40px;
+	font-style: italic;
+}
+
+.footer {
+	background: #322e2e;
+	padding: 15px 0 10px;
+	color: #FFF;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.footer .copy {
+	font-size: 12px;
+	margin: 2px 0;
+	text-align: center;
+}
