@@ -7,7 +7,11 @@
 			var radioValue = $("input[name='choice']:checked").val();
 			ga('send', {
 			  hitType: 'event',
-			  eventCategory: 'Submit'
+			  eventCategory: 'survey'
+			});
+			window.dataLayer.push({
+				'event': 'survey',
+				'value': radioValue
 			});
 		});
 
