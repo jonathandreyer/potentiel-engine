@@ -14,9 +14,6 @@
 		<!-- Font Awesome CSS -->
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
 
-		<!-- Bootstrap-select CSS -->
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" rel="stylesheet">
-
 		<!-- Custom styles CSS -->
 		<link href="css/style.css" rel="stylesheet" media="screen">
 
@@ -25,9 +22,6 @@
 
 		<!-- Bootstrap -->
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-		<!-- Bootstrap-select -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
 		<!-- custom script -->
 		<script type="text/javascript" src="js/custom.js"></script>
@@ -56,70 +50,69 @@
 	<body>
 		<div class="wrap">
 			<div class="page-header">
-				<div class="header row">
-					<!--<div class="col-md-1 header-logo">
-						<img class="logo" src="image/logo.jpg" alt="">
+				<div class="row header">
+					<div class="header-title">
+						<h1>Sondage du choix</h1>
 					</div>
-
-					<div class="col-md-offset-1 col-md-7 row">-->
-					<div class="row">
-						<div class="header-title">
-							<h1>Sondage du choix</h1>
-						</div>
-					</div>
+				</div>
+				<div class="row header-line">
+					<div class="col-xs-4 col-md-4" style="background: #c3c3c3; min-height: inherit;"></div>
+					<div class="col-xs-4 col-md-4" style="background: #c3c3c3; min-height: inherit;"></div>
+					<div class="col-xs-4 col-md-4" style="background: #c3c3c3; min-height: inherit;"></div>
 				</div>
 			</div>
 
 			<div class="container">
-				<div class="row col-md-12">
-					<div class="row">
-						<div class="col-md-5">
+				<div class="">
+					<div class="row content-title">
+						<div class="">
 							<h3>Choix</h3>
 						</div>
 					</div>
 
-					<div class="col-sm-12">
-		        <div class="radio">
-		          <label style="font-size: 1.5em">
-		            <input type="radio" name="choice" value="c1">
-		            <span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
-		            	1 . Choix1
-		          </label>
-		        </div>
-		        <div class="radio">
-		          <label style="font-size: 1.5em">
-		            <input type="radio" name="choice" value="c2">
-		            <span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
-			            2 . Choix2
-		          </label>
-		        </div>
-		        <div class="radio">
-		          <label style="font-size: 1.5em">
-		            <input type="radio" name="choice" value="c3">
-		            <span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
-		            	3 . Choix3
-		          </label>
-		        </div>
-						<div class="radio">
-		          <label style="font-size: 1.5em">
-		            <input type="radio" name="choice" value="c4">
-		            <span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
-		            	4 . Choix4
-		          </label>
-		        </div>
-						<div class="radio">
-		          <label style="font-size: 1.5em">
-		            <input type="radio" name="choice" value="c5">
-		            <span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
-		            	5 . Choix5
-		          </label>
-		        </div>
-		    	</div>
+					<div class="row content-section">
+						<div class="row radio content-radio">
+							<label style="font-size: 1.5em">
+								<input type="radio" name="choice" value="c1">
+								<span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
+									1 . Choix1
+							</label>
+						</div>
+						<div class="row radio content-radio">
+							<label style="font-size: 1.5em">
+								<input type="radio" name="choice" value="c2">
+								<span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
+									2 . Choix2
+							</label>
+						</div>
+						<div class="row radio content-radio">
+							<label style="font-size: 1.5em">
+								<input type="radio" name="choice" value="c3">
+								<span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
+									3 . Choix3
+							</label>
+						</div>
+						<div class="row radio content-radio">
+							<label style="font-size: 1.5em">
+								<input type="radio" name="choice" value="c4">
+								<span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
+									4 . Choix4
+							</label>
+						</div>
+						<div class="row radio content-radio">
+							<label style="font-size: 1.5em">
+								<input type="radio" name="choice" value="c5">
+								<span class="cr"><i class="cr-icon glyphicon glyphicon-arrow-right"></i></span>
+									5 . Choix5
+							</label>
+						</div>
+					</div>
 
-					<button id="submit" class="btn" value="Send">
-						<i class="fa fa-send icon-before"></i> Transmettre
-					</button>
-
+					<div class="row content-button">
+						<button id="submit" class="btn btn-custom" value="Send">
+							<i class="fa fa-send icon-before"></i> Transmettre
+						</button>
+					</div>
 				</div>
 			</div>
 
