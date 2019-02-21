@@ -16,6 +16,12 @@
 		btn.append('<i class="fa fa-send icon-before"></i> Transmis');
 	}
 
+	function setButtonError() {
+		var btn = $('#contact-form button');
+		btn.empty();
+		btn.append('<i class="fa fa-exclamation-triangle icon-before"></i> Error');
+	}
+
 	$(document).ready(function() {
 		var enable = false;
 		var submit = true;
@@ -36,6 +42,7 @@
 			enable = true;
 		} else {
 			setTransmit(false);
+			setButtonError();
 		}
 
 		var val = Cookies.get('submit');
@@ -43,6 +50,8 @@
 			if(enable == true) {
 				submit = false;
 			}
+		} else {
+			setButtonSubmit();
 		};
 
 		$('#submit').on('click', function(event) {
