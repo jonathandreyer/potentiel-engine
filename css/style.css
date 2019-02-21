@@ -31,7 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 	background: transparent;
 	border: 2px solid #626262;
 	padding: 10px 15px;
-	
 }
 
 .content-button {
@@ -138,17 +137,13 @@ body {
 	padding-bottom: 0;
 }
 
-.header {
-	margin: 0 30px;
-}
-
 .header-title {
-	margin: 15px;
+	margin: 25px;
 	text-align: center;
 }
 
 .header-line {
-	min-height: 3px;
+	min-height: 5px;
 }
 
 .container {
