@@ -19,6 +19,18 @@ h1, h2, h3, h4, h5, h6 {
 	color: #222;
 }
 
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
 /* ---------------------------------------------- /*
  * Inputs styles
 /* ---------------------------------------------- */
@@ -35,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-button {
 	margin-top: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	padding: 5px;
 	text-align: center;
 }
@@ -44,6 +56,10 @@ h1, h2, h3, h4, h5, h6 {
 	background: #626262;
 	border: 2px solid #626262;
 	color: #FFF;
+}
+
+.btn-custom > i {
+	padding-right: 7px;
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
@@ -133,7 +149,7 @@ body {
 .page-header {
 	background: rgba(230, 230, 230, 0.4);
 	border: 0;
-	margin: 0 0 20px;
+	margin: 0 0 15px;
 	padding-bottom: 0;
 }
 
@@ -151,14 +167,19 @@ body {
 }
 
 .content-title {
-	margin-top: 10px;
-	margin-bottom: 40px;
+	margin-top: 12px;
+	margin-bottom: 8px;
 	text-align: center;
 }
 
+.content-title > p {
+	margin: 5px;
+	font-size: 15px;
+}
+
 .content-section {
-	margin-bottom: 40px;
-	width: 180px;
+	margin-bottom: 20px;
+	width: 250px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
