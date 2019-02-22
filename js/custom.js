@@ -90,6 +90,8 @@
 				var id = create_UUID();
 				Cookies.set('token', id);
 			});
+		} else {
+			setButtonError();
 		}
 	}, false);
 
