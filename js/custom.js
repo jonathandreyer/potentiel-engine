@@ -1,27 +1,23 @@
 (function($){
 
-	function setTransmit(s) {
+	function setButtonEnableDisable(s) {
 		$('#contact-form button').attr('disabled', !s);
 	}
-
 	function setButtonWait() {
 		var btn = $('#contact-form button');
 		btn.empty();
 		btn.append('<i class="fa fa-cog fa-spin"></i> Wait...');
 	}
-
 	function setButtonSubmit() {
 		var btn = $('#contact-form button');
 		btn.empty();
 		btn.append('<i class="fa fa-send icon-before"></i> Transmis');
 	}
-
 	function setButtonError() {
 		var btn = $('#contact-form button');
 		btn.empty();
 		btn.append('<i class="fa fa-exclamation-triangle icon-before"></i> Error');
 	}
-
 	function create_UUID(){
 		var dt = new Date().getTime();
 		var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -32,108 +28,69 @@
 		return uuid;
 	}
 
-	window.addEventListener('load', function()
-	{
-		if(window.ga && ga.create)
-		{
-			console.log('Google Analytics is loaded');
+	setButtonEnableDisable(false);
+	$('input[name="choice"]:checked').prop('checked', false);
 
-			var img = document.createElement('img');
-			img.setAttribute('style','display:none;');
-			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Allowing&ea=Google%20Analytics&gtm=GTM-K79C397';
-			document.body.appendChild(img);
-		}
-		else
-		{
-			console.log('Google Analytics is not loaded');
+	window.addEventListener('load', function() {
+		var cookie = false;
+		var okToSubmit = false;
+		var submitted = true;
 
-			var img = document.createElement('img');
-			img.setAttribute('style','display:none;');
-			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Blocking&ea=Google%20Analytics&gtm=GTM-K79C397';
-			document.body.appendChild(img);
-		}
+		if(window.google_tag_manager) {
+			okToSubmit = true;
 
-		if(window.google_tag_manager)
-		{
-			console.log('Google Tag Manager is loaded');
+			Cookies.set('cookie', 'yes');
+			if(Cookies.get('cookie') === 'yes') {
+				cookie = true;
+			} else {
+				setButtonEnableDisable(false);
+				setButtonError();
+				window.dataLayer.push({
+					'event': 'nocookie'
+				});
+			}
 
-			var img = document.createElement('img');
-			img.setAttribute('style','display:none;');
-			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Allowing&ea=Google%20Tag%20Manager&gtm=GTM-K79C397';
-			document.body.appendChild(img);
-		}
-		else
-		{
-			console.log('Google Tag Manager is not loaded');
+			var token = Cookies.get('token');
+			if(typeof token == 'undefined') {
+				if(cookie == true) {
+					submitted = false;
+				}
+			} else {
+				setButtonSubmit();
+				window.dataLayer.push({
+					'event': 'alreadydone',
+					'value': token
+				});
+			}
 
-			var img = document.createElement('img');
-			img.setAttribute('style','display:none;');
-			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Blocking&ea=Google%20Tag%20Manager&gtm=GTM-K79C397';
-			document.body.appendChild(img);
+			$('input[name="choice"]').on("click",function(){
+				var radioValue = $("input[name='choice']:checked").val();
+				if (cookie && okToSubmit && !submitted) {
+					setButtonEnableDisable(true);
+				}
+			});
+
+			$('#submit').on('click', function(event) {
+				event.preventDefault(); // To prevent following the link (optional)
+				var radioValue = $("input[name='choice']:checked").val();
+				var timeInterval = 1500;
+
+				submitted = true;
+				setButtonEnableDisable(false);
+
+				setButtonWait();
+				setInterval(function () {
+					setButtonSubmit();
+				}, timeInterval);
+
+				window.dataLayer.push({
+					'event': 'survey',
+					'value': radioValue
+				});
+				var id = create_UUID();
+				Cookies.set('token', id);
+			});
 		}
 	}, false);
-
-	$(document).ready(function() {
-		var enable = false;
-		var submit = true;
-
-		setTransmit(false);
-
-		$('input[name="choice"]:checked').prop('checked', false);
-		$('input[name="choice"]').on("click",function(){
-			var radioValue = $("input[name='choice']:checked").val();
-			console.log("Radio change to : " + radioValue);
-			if (enable && !submit) {
-				setTransmit(true);
-			}
-		});
-
-		Cookies.set('cookie', 'yes');
-		if(Cookies.get('cookie') === 'yes') {
-			enable = true;
-		} else {
-			setTransmit(false);
-			setButtonError();
-			window.dataLayer.push({
-				'event': 'nocookie'
-			});
-		}
-
-		var val = Cookies.get('token');
-		if(typeof val == 'undefined') {
-			if(enable == true) {
-				submit = false;
-			}
-		} else {
-			setButtonSubmit();
-			window.dataLayer.push({
-				'event': 'alreadydone',
-				'value': val
-			});
-		};
-
-		$('#submit').on('click', function(event) {
-			event.preventDefault(); // To prevent following the link (optional)
-			var radioValue = $("input[name='choice']:checked").val();
-
-			var timeIntervalFadeOut = 1500;
-
-			submit = true;
-			setTransmit(false);
-
-			setButtonWait();
-			setInterval(function () {
-				setButtonSubmit();
-			}, timeIntervalFadeOut);
-
-			window.dataLayer.push({
-				'event': 'survey',
-				'value': radioValue
-			});
-			var id = create_UUID();
-			Cookies.set('token', id);
-		});
-
-	});
 
 })(jQuery);
