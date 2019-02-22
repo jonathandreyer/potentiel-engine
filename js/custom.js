@@ -13,7 +13,7 @@
 		btn.empty();
 		btn.append('<i class="fa fa-send icon-before"></i> ' + label);
 		var txt = $('.response-submit');
-		txt.fadeIn(500);
+		txt.hide().fadeIn(500);
 		txt.html(msg);
 		setTimeout(function () {txt.fadeOut(1000);}, 5000);
 	}
@@ -22,7 +22,7 @@
 		btn.empty();
 		btn.append('<i class="fa fa-send icon-before"></i> ' + label);
 		var txt = $('.response-submit');
-		txt.fadeIn(500);
+		txt.hide().fadeIn(500);
 		txt.html('<i class="fa fa-warning"></i> ' + msg);
 		setTimeout(function () {txt.fadeOut(1000);}, 5000);
 	}
@@ -31,9 +31,8 @@
 		btn.empty();
 		btn.append('<i class="fa fa-exclamation-triangle icon-before"></i> Erreur');
 		var txt = $('.response-submit');
-		txt.fadeIn(1000);
+		txt.hide().fadeIn(1000);
 		txt.html('<i class="fa fa-warning"></i> ' + msg);
-		setTimeout(function () {txt.fadeOut(1000);}, 5000);
 	}
 	function create_UUID(){
 		var dt = new Date().getTime();
