@@ -164,6 +164,10 @@ body {
 	margin-right: auto;
 }
 
+.response-submit {
+	text-align: center;
+}
+
 .footer {
 	background: #322e2e;
 	padding: 15px 0 10px;

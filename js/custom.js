@@ -3,20 +3,37 @@
 	function setButtonEnableDisable(s) {
 		$('#contact-form button').attr('disabled', !s);
 	}
-	function setButtonWait() {
+	function setWait() {
 		var btn = $('#contact-form button');
 		btn.empty();
-		btn.append('<i class="fa fa-cog fa-spin"></i> Wait...');
+		btn.append('<i class="fa fa-cog fa-spin"></i> Transmission...');
 	}
-	function setButtonSubmit() {
+	function setSubmitted(label, msg) {
 		var btn = $('#contact-form button');
 		btn.empty();
-		btn.append('<i class="fa fa-send icon-before"></i> Transmis');
+		btn.append('<i class="fa fa-send icon-before"></i> ' + label);
+		var txt = $('.response-submit');
+		txt.fadeIn(500);
+		txt.html(msg);
+		setTimeout(function () {txt.fadeOut(1000);}, 5000);
 	}
-	function setButtonError() {
+	function setSubmittedWarning(label, msg) {
 		var btn = $('#contact-form button');
 		btn.empty();
-		btn.append('<i class="fa fa-exclamation-triangle icon-before"></i> Error');
+		btn.append('<i class="fa fa-send icon-before"></i> ' + label);
+		var txt = $('.response-submit');
+		txt.fadeIn(500);
+		txt.html('<i class="fa fa-warning"></i> ' + msg);
+		setTimeout(function () {txt.fadeOut(1000);}, 5000);
+	}
+	function setError(msg) {
+		var btn = $('#contact-form button');
+		btn.empty();
+		btn.append('<i class="fa fa-exclamation-triangle icon-before"></i> Erreur');
+		var txt = $('.response-submit');
+		txt.fadeIn(1000);
+		txt.html('<i class="fa fa-warning"></i> ' + msg);
+		setTimeout(function () {txt.fadeOut(1000);}, 5000);
 	}
 	function create_UUID(){
 		var dt = new Date().getTime();
@@ -44,7 +61,7 @@
 				cookie = true;
 			} else {
 				setButtonEnableDisable(false);
-				setButtonError();
+				setError('Merci d\'autoriser les cookies afin de pouvoir transmettre votre choix.');
 				window.dataLayer.push({
 					'event': 'nocookie'
 				});
@@ -56,7 +73,7 @@
 					submitted = false;
 				}
 			} else {
-				setButtonSubmit();
+				setSubmittedWarning('Déjà transmis', 'Un choix a déjà été transmis depuis cet appareil !');
 				window.dataLayer.push({
 					'event': 'alreadydone',
 					'value': token
@@ -77,21 +94,20 @@
 
 				submitted = true;
 				setButtonEnableDisable(false);
-
-				setButtonWait();
-				setInterval(function () {
-					setButtonSubmit();
-				}, timeInterval);
+				setWait();
 
 				window.dataLayer.push({
 					'event': 'survey',
-					'value': radioValue
+					'value': radioValue,
+					'eventCallback': function() {
+						var id = create_UUID();
+						Cookies.set('token', id);
+						setSubmitted('Transmis', 'Merci d\'avoir utilisé cette plateforme !');
+					}
 				});
-				var id = create_UUID();
-				Cookies.set('token', id);
 			});
 		} else {
-			setButtonError();
+			setError('Merci d\'autoriser les plugins tiers afin de pouvoir transmettre votre choix.');
 		}
 	}, false);
 
