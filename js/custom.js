@@ -37,19 +37,39 @@
 		if(window.ga && ga.create)
 		{
 			console.log('Google Analytics is loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Allowing&ea=Google%20Analytics&gtm=GTM-K79C397';
+			document.body.appendChild(img);
 		}
 		else
 		{
 			console.log('Google Analytics is not loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Blocking&ea=Google%20Analytics&gtm=GTM-K79C397';
+			document.body.appendChild(img);
 		}
 
 		if(window.google_tag_manager)
 		{
 			console.log('Google Tag Manager is loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Allowing&ea=Google%20Tag%20Manager&gtm=GTM-K79C397';
+			document.body.appendChild(img);
 		}
 		else
 		{
 			console.log('Google Tag Manager is not loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = 'https://www.google-analytics.com/collect?v=1&t=event&&ec=Blocking&ea=Google%20Tag%20Manager&gtm=GTM-K79C397';
+			document.body.appendChild(img);
 		}
 	}, false);
 
