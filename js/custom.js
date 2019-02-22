@@ -64,6 +64,9 @@
 		} else {
 			setTransmit(false);
 			setButtonError();
+			window.dataLayer.push({
+				'event': 'nocookie'
+			});
 		}
 
 		var val = Cookies.get('token');
@@ -73,6 +76,10 @@
 			}
 		} else {
 			setButtonSubmit();
+			window.dataLayer.push({
+				'event': 'alreadydone',
+				'value': val
+			});
 		};
 
 		$('#submit').on('click', function(event) {
