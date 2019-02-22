@@ -186,8 +186,13 @@ body {
 }
 
 .response-submit {
+	margin: 0 5px 0 5px;
 	text-align: center;
 }
+
+.response-submit > i {
+		margin-right: 7px;
+	}
 
 .footer {
 	background: #322e2e;
