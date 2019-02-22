@@ -59,7 +59,7 @@ h3 {
 }
 
 .btn-custom > i {
-	padding-right: 7px;
+	margin-right: 7px;
 }
 
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {

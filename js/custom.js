@@ -89,7 +89,6 @@
 			$('#submit').on('click', function(event) {
 				event.preventDefault(); // To prevent following the link (optional)
 				var radioValue = $("input[name='choice']:checked").val();
-				var timeInterval = 1500;
 
 				submitted = true;
 				setButtonEnableDisable(false);
@@ -101,7 +100,9 @@
 					'eventCallback': function() {
 						var id = create_UUID();
 						Cookies.set('token', id);
-						setSubmitted('Transmis', 'Merci d\'avoir utilisé cette plateforme !');
+						setTimeout(function () {
+							setSubmitted('Transmis', 'Merci d\'avoir utilisé cette plateforme !');
+						}, 1500);
 					}
 				});
 			});
