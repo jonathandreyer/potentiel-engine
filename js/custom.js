@@ -58,15 +58,15 @@
 			}
 		});
 
-		Cookies.set('test', 'yes');
-		if(Cookies.get('test') === 'yes') {
+		Cookies.set('cookie', 'yes');
+		if(Cookies.get('cookie') === 'yes') {
 			enable = true;
 		} else {
 			setTransmit(false);
 			setButtonError();
 		}
 
-		var val = Cookies.get('submit');
+		var val = Cookies.get('token');
 		if(typeof val == 'undefined') {
 			if(enable == true) {
 				submit = false;
@@ -93,7 +93,7 @@
 				'event': 'survey',
 				'value': radioValue
 			});
-			Cookies.set('submit', 'yes');
+			Cookies.set('token', 'yes');
 		});
 
 	});
