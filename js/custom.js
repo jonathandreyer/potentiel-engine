@@ -22,6 +22,27 @@
 		btn.append('<i class="fa fa-exclamation-triangle icon-before"></i> Error');
 	}
 
+	window.addEventListener('load', function()
+	{
+		if(window.ga && ga.create)
+		{
+			console.log('Google Analytics is loaded');
+		}
+		else
+		{
+			console.log('Google Analytics is not loaded');
+		}
+
+		if(window.google_tag_manager)
+		{
+			console.log('Google Tag Manager is loaded');
+		}
+		else
+		{
+			console.log('Google Tag Manager is not loaded');
+		}
+	}, false);
+
 	$(document).ready(function() {
 		var enable = false;
 		var submit = true;
